@@ -185,6 +185,45 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('story').scrollIntoView({ behavior: 'smooth' });
     });
   }
+
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+        mobileMenuBtn.style.zIndex = '1000';
+        mobileMenuBtn.style.position = 'fixed';
+        mobileMenuBtn.style.top = '20px';
+        mobileMenuBtn.style.right = '20px';
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        mobileMenuBtn.style.zIndex = '';
+        mobileMenuBtn.style.position = '';
+        mobileMenuBtn.style.top = '';
+        mobileMenuBtn.style.right = '';
+      }
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        mobileMenuBtn.style.zIndex = '';
+        mobileMenuBtn.style.position = '';
+        mobileMenuBtn.style.top = '';
+        mobileMenuBtn.style.right = '';
+      });
+    });
+  }
 });
 
 const openModal = (product) => {
