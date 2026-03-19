@@ -191,8 +191,6 @@ const openModal = (product) => {
   if (!product) return;
   const modal = document.getElementById('product-modal');
   const modalBody = document.getElementById('modal-product-details');
-  const whatsappMsg = `Hi! I want to order the "${product.name}" (${formatPrice(product.price)}). Please let me know how to proceed.`;
-  const whatsappUrl = `https://wa.me/919360378656?text=${encodeURIComponent(whatsappMsg)}`; // Customer support number
 
   modalBody.innerHTML = `
     <div class="modal-product-img">
@@ -207,9 +205,9 @@ const openModal = (product) => {
         <p style="color: var(--primary); font-size: 2rem; font-weight: 800; font-family: var(--font-headings);">${formatPrice(product.price)}</p>
       </div>
       
-      <p style="font-size: 1.1rem; color: var(--text-gray); margin-bottom: 30px; line-height: 1.8;">${product.description}</p>
+      <p style="font-size: 1.1rem; color: var(--text-gray); margin-bottom: 20px; line-height: 1.8;">${product.description}</p>
       
-      <div style="margin-bottom: 40px;">
+      <div style="margin-bottom: 30px;">
         <h4 style="margin-bottom: 15px; font-size: 1.2rem;">Why you'll love it:</h4>
         <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
           <li style="background: var(--pink-light); padding: 12px 20px; border-radius: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
@@ -227,10 +225,34 @@ const openModal = (product) => {
         </ul>
       </div>
 
+      <!-- Delivery Details Form -->
+      <div class="delivery-form-section" style="background: linear-gradient(135deg, #FFF8F0, #FFF3E6); border-radius: 16px; padding: 28px; margin-bottom: 25px; border: 1px solid #F0E0D0;">
+        <h4 style="margin-bottom: 18px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+          <i class="fas fa-truck" style="color: var(--primary);"></i> Delivery Details
+        </h4>
+        <div style="display: grid; gap: 14px;">
+          <div>
+            <label for="order-name" style="display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; color: var(--text-dark);">Your Name *</label>
+            <input type="text" id="order-name" placeholder="e.g. Priya Sharma" style="width: 100%; padding: 12px 16px; border-radius: 10px; border: 1.5px solid #E0D0C0; font-family: var(--font-main); font-size: 1rem; background: #fff; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#E0D0C0'">
+          </div>
+          <div>
+            <label for="order-address" style="display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; color: var(--text-dark);">Delivery Address *</label>
+            <textarea id="order-address" rows="2" placeholder="Full delivery address (Street, Area, City)" style="width: 100%; padding: 12px 16px; border-radius: 10px; border: 1.5px solid #E0D0C0; font-family: var(--font-main); font-size: 1rem; resize: vertical; background: #fff; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#E0D0C0'"></textarea>
+          </div>
+          <div>
+            <label for="order-pincode" style="display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; color: var(--text-dark);">Pincode *</label>
+            <input type="text" id="order-pincode" placeholder="e.g. 600001" maxlength="6" style="width: 100%; padding: 12px 16px; border-radius: 10px; border: 1.5px solid #E0D0C0; font-family: var(--font-main); font-size: 1rem; background: #fff; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#E0D0C0'">
+          </div>
+        </div>
+        <p id="delivery-form-error" style="color: #D32F2F; font-size: 0.85rem; margin-top: 10px; display: none;">
+          <i class="fas fa-exclamation-circle"></i> Please fill in all delivery details before ordering.
+        </p>
+      </div>
+
       <div class="modal-actions" style="display: flex; gap: 20px;">
-        <a href="${whatsappUrl}" target="_blank" class="btn btn-primary btn-lg whatsapp-btn" style="width: 100%;">
+        <button id="order-whatsapp-btn" class="btn btn-primary btn-lg whatsapp-btn" style="width: 100%; cursor: pointer; border: none; font-size: 1.1rem;">
           <i class="fab fa-whatsapp"></i> Order via WhatsApp
-        </a>
+        </button>
       </div>
 
       <div style="margin-top: 50px; border-top: 1px solid #EEE; padding-top: 30px;">
@@ -246,6 +268,37 @@ const openModal = (product) => {
       </div>
     </div>
   `;
+
+  // Attach order button handler
+  const orderBtn = document.getElementById('order-whatsapp-btn');
+  orderBtn.addEventListener('click', () => {
+    const name = document.getElementById('order-name').value.trim();
+    const address = document.getElementById('order-address').value.trim();
+    const pincode = document.getElementById('order-pincode').value.trim();
+    const errorEl = document.getElementById('delivery-form-error');
+
+    if (!name || !address || !pincode) {
+      errorEl.style.display = 'block';
+      return;
+    }
+    errorEl.style.display = 'none';
+
+    const whatsappMsg = `🛒 *New Order from NammaKoodaiCorner*
+
+📦 *Product:* ${product.name}
+💰 *Price:* ${formatPrice(product.price)}
+📂 *Category:* ${product.category} koodai
+
+👤 *Customer Name:* ${name}
+📍 *Delivery Address:* ${address}
+📮 *Pincode:* ${pincode}
+
+Please confirm availability and delivery charges. Thank you! 🙏`;
+
+    const whatsappUrl = `https://wa.me/919360378656?text=${encodeURIComponent(whatsappMsg)}`;
+    window.open(whatsappUrl, '_blank');
+  });
+
   modal.style.display = 'block';
 };
 
