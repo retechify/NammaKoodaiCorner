@@ -544,6 +544,14 @@ nav {
   display: none;
 }
 
+/* Product cards inside horizontal carousel */
+.products-carousel .product-card {
+  min-width: 260px;
+  max-width: 280px;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
 /* Product Cards */
 .product-grid {
   display: grid;
