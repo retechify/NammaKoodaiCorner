@@ -192,7 +192,7 @@ const openModal = (product) => {
   const modal = document.getElementById('product-modal');
   const modalBody = document.getElementById('modal-product-details');
   const whatsappMsg = `Hi! I want to order the "${product.name}" (${formatPrice(product.price)}). Please let me know how to proceed.`;
-  const whatsappUrl = `https://wa.me/917019321559?text=${encodeURIComponent(whatsappMsg)}`; // Using reference phone for example
+  const whatsappUrl = `https://wa.me/919360378656?text=${encodeURIComponent(whatsappMsg)}`; // Customer support number
 
   modalBody.innerHTML = `
     <div class="modal-product-img">
