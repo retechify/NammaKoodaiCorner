@@ -21,10 +21,11 @@
                 <span class="logo-text">Namma<span>Koodai</span>Corner</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/shop">Shop</a></li>
+                <li><a href="#/learn">Learn</a></li>
                 <li><a href="#story">Our Story</a></li>
                 <li><a href="#categories">Categories</a></li>
-                <li><a href="#products">Products</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -33,6 +34,8 @@
             <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
+
+    <div id="home-view">
 
     <main>
         <section id="hero" class="hero-section">
@@ -131,25 +134,25 @@
                         <div class="category-icon bg-pink-light"><i class="fas fa-shopping-basket text-pink"></i></div>
                         <h3>Plastic Koodai</h3>
                         <p>Durable and easy to clean, perfect for daily groceries.</p>
-                        <a href="#" class="btn-link">Shop Collection <i class="fas fa-arrow-right"></i></a>
+                        <a href="#/shop?category=plastic" class="btn-link">Shop Collection <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="category-card animate-on-scroll" data-category="wire">
                         <div class="category-icon bg-yellow-light"><i class="fas fa-plus-square text-yellow"></i></div>
                         <h3>Wire Koodai</h3>
                         <p>Elegant and strong, reimagined as a modern tote.</p>
-                        <a href="#" class="btn-link">Shop Collection <i class="fas fa-arrow-right"></i></a>
+                        <a href="#/shop?category=wire" class="btn-link">Shop Collection <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="category-card animate-on-scroll" data-category="storage">
                         <div class="category-icon bg-green-light"><i class="fas fa-box-open text-green"></i></div>
                         <h3>Storage Solutions</h3>
                         <p>Organize your home with a touch of tradition.</p>
-                        <a href="#" class="btn-link">Shop Collection <i class="fas fa-arrow-right"></i></a>
+                        <a href="#/shop?category=storage" class="btn-link">Shop Collection <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="category-card animate-on-scroll" data-category="gift">
                         <div class="category-icon bg-orange-light"><i class="fas fa-gift text-orange"></i></div>
                         <h3>Gift Baskets</h3>
                         <p>Beautifully crafted baskets for your special occasions.</p>
-                        <a href="#" class="btn-link">Shop Collection <i class="fas fa-arrow-right"></i></a>
+                        <a href="#/shop?category=gift" class="btn-link">Shop Collection <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -165,31 +168,10 @@
             </div>
         </section>
 
-        <section id="products" class="products-section section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Popular Choice</h2>
-                    <div class="filter-btns">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="plastic">Plastic</button>
-                        <button class="filter-btn" data-filter="wire">Wire</button>
-                        <button class="filter-btn" data-filter="storage">Storage</button>
-                    </div>
-                </div>
-                <div class="product-grid" id="main-product-grid">
-                    <!-- Products will be injected by main.js -->
-                </div>
-            </div>
         </section>
 
-        <section id="trending" class="trending-section section-padding bg-light">
-            <div class="container">
-                <h2 class="section-title text-center">Popular Near You</h2>
-                <div class="product-grid" id="trending-products-list">
-                    <!-- Products will be injected by main.js -->
-                </div>
-            </div>
-        </section>
+        <!-- Moved Products section to Shop View -->
+
 
         <section id="videos" class="video-section section-padding">
             <div class="container">
@@ -227,6 +209,32 @@
             </div>
         </section>
 
+        <section id="learn-landing" class="section-padding" style="background: linear-gradient(135deg, var(--blue-light) 0%, #fff 100%);">
+            <div class="container">
+                <div class="story-layout">
+                    <div class="video-card animate-fade-in" style="transform: none;">
+                        <div class="video-iframe-wrapper">
+                            <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" title="Learn Koodai Making" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;position:absolute;top:0;left:0;border:none; border-radius: 20px;"></iframe>
+                        </div>
+                    </div>
+                    <div class="story-content animate-slide-up">
+                        <span class="product-tag" style="background: var(--blue); color: white;">New Platform</span>
+                        <h2 class="section-title text-left" style="margin-top: 15px;">Learn to Make Beautiful Koodai at Home</h2>
+                        <p class="story-text">Always wanted to craft your own traditional basket? Join our online learning platform and master the art of Koodai making with step-by-step guidance from expert artisans.</p>
+                        <ul class="features-list" style="margin-bottom: 25px;">
+                            <li><i class="fas fa-check-circle text-blue"></i> Learn from anywhere, anytime</li>
+                            <li><i class="fas fa-check-circle text-blue"></i> Beginner to Advanced levels</li>
+                            <li><i class="fas fa-check-circle text-blue"></i> Start your own Koodai business</li>
+                        </ul>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <a href="#/learn" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Explore Courses</a>
+                            <a href="tel:+919360378656" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Book a Call</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="reviews" class="reviews-section section-padding bg-light">
             <div class="container">
                 <h2 class="section-title text-center">Trusted by 100+ happy customers</h2>
@@ -240,6 +248,36 @@
                         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p>"The WhatsApp booking was so easy. I even got a custom color made for my daughter. Highly recommended!"</p>
                         <div class="review-author">- Rahul M., Bangalore</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="special-services" class="special-services-section section-padding">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card bulk-order animate-on-scroll">
+                        <div class="service-content">
+                            <span class="service-tag">Bulk Savings</span>
+                            <h2>Bulk Order? <br><span class="highlight-text">Click WhatsApp</span></h2>
+                            <p>Planning an event or corporate gifting? Get exclusive wholesale rates for orders above 20 pieces.</p>
+                            <a href="https://wa.me/919360378656?text=I'm interested in placing a Bulk Order. Please share the wholesale price list." target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Chat for Bulk Rates</a>
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-boxes-packing"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card custom-order animate-on-scroll">
+                        <div class="service-content">
+                            <span class="service-tag">Unique Designs</span>
+                            <h2>Custom Koodai? <br><span class="highlight-text">Message us</span></h2>
+                            <p>Have a specific color or pattern in mind? Our artisans can weave your vision into reality.</p>
+                            <a href="https://wa.me/919360378656?text=I'd like to order a Custom Koodai. Can we discuss some design options?" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Message Our Artisans</a>
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -282,6 +320,83 @@
         </section>
     </main>
 
+    </div><!-- End #home-view -->
+
+    <!-- New Dedicated Shop View -->
+    <div id="shop-view" style="display: none;">
+        <main>
+            <section class="shop-hero bg-light" style="padding: 120px 0 60px;">
+                <div class="container text-center">
+                    <h1 class="section-title">Our Collection</h1>
+                    <p class="section-subtitle">Exquisite handcrafted koodais for your every need.</p>
+                </div>
+            </section>
+
+            <section id="products" class="products-section section-padding">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Popular Choice</h2>
+                        <div class="filter-btns">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="plastic">Plastic</button>
+                            <button class="filter-btn" data-filter="wire">Wire</button>
+                            <button class="filter-btn" data-filter="storage">Storage</button>
+                        </div>
+                    </div>
+                    <div id="main-product-grid">
+                        <!-- Products will be injected by main.js -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- New Learn Catalog View -->
+    <div id="learn-view" style="display: none;">
+        <main>
+            <section class="shop-hero" style="padding: 120px 0 60px; background: var(--blue-light);">
+                <div class="container text-center">
+                    <h1 class="section-title">Learn Koodai Academy</h1>
+                    <p class="section-subtitle">Master traditional weaving techniques from expert artisans.</p>
+                </div>
+            </section>
+
+            <section class="products-section section-padding">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Available Courses</h2>
+                    </div>
+                    <!-- Reuse product-grid style for courses -->
+                    <div class="product-grid" id="main-course-grid">
+                        <!-- Courses injected by main.js -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-section section-padding bg-light">
+                <div class="container">
+                    <h2 class="section-title text-center">Student Success Stories</h2>
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p>"The Beginner course was so easy to follow. I made my first plastic koodai in just two weeks! Now I'm making them for my family."</p>
+                            <div class="review-author">- Anitha K., Student</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p>"The Business course gave me the confidence to start selling online. The pricing strategies were exactly what I needed."</p>
+                            <div class="review-author">- Selvi R., Artisan</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- New Dedicated Product View / Course Detail View -->
+    <div id="product-view" style="display: none;"></div>
+    <div id="course-view" style="display: none;"></div>
+
     <footer class="footer section-padding">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -299,51 +414,32 @@
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/shop">Shop</a></li>
                     <li><a href="#story">Our Story</a></li>
-                    <li><a href="#products">Products</a></li>
                     <li><a href="#reviews">Reviews</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="#">Plastic Koodai</a></li>
-                    <li><a href="#">Wire Koodai</a></li>
-                    <li><a href="#">Storage Baskets</a></li>
-                    <li><a href="#">Gift Hampers</a></li>
+                    <li><a href="#/shop" class="cat-link" data-category="plastic">Plastic Koodai</a></li>
+                    <li><a href="#/shop" class="cat-link" data-category="wire">Wire Koodai</a></li>
+                    <li><a href="#/shop" class="cat-link" data-category="storage">Storage Baskets</a></li>
+                    <li><a href="#/shop" class="cat-link" data-category="gift">Gift Hampers</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                     <li><a href="#">Bulk Orders</a></li>
                     <li><a href="#">Shipping Policy</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2024 NammaKoodaiCorner. All rights reserved.</p>
-        </div>
     </footer>
-
-    <!-- Fixed WhatsApp Floating Button -->
-    <a href="https://wa.me/919360378656?text=Hi! I want to inquire about a Koodai." class="whatsapp-floating" target="_blank" aria-label="WhatsApp Us">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Chat with us!</span>
-    </a>
-
-    <!-- Modal for Product Details -->
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-body" id="modal-product-details">
-                <!-- Injected by main.js -->
-            </div>
-        </div>
-    </div>
 
     <script type="module" src="./main.js"></script>
 </body>
